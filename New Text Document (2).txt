@@ -1,0 +1,12 @@
+1.select count(title) from film_list where actors like '%sean williams%'
+2.select f.title from film f inner join film_category fc on f.film_id=fc.film_id 
+	inner join category c on c.category_id=fc.category_id,
+    inventory inv inner join rental r on inv.inventory_id=r.inventory_id
+    where c.name="Horror" 
+     limit 3;
+3.select * from customer_list where country="India"and id in 
+(select rental.customer_id from film_list inner join inventory inner join rental  where film_list.category="sports");
+4.select distinct f.title from film f inner join film_category fc  on f.film_id=fc.film_id 
+	inner join category c on fc.category_id=c.category_id 
+    where f.rating="PG-13" and c.name="comedy";
+5.select * from customer_list where country="canada"
